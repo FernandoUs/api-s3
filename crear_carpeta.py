@@ -1,9 +1,11 @@
 import boto3
+import json
 
 def lambda_handler(event, context):
     # Entrada (json)
-    nombre_bucket = event['body']['bucket']
-    nombre_carpeta = event['body']['carpeta']
+    info_json= json.loads(event['body'])
+    nombre_bucket = info_json['bucket']
+    nombre_carpeta = info_json['carpeta']
     
     # Proceso
     s3 = boto3.client('s3')
