@@ -28,7 +28,7 @@ functions:
           cors: true
           integration: lambda
   crear_carpeta:
-    handler: crear_carpetas.lambda_handler
+    handler: crear_carpeta.lambda_handler
     events:
       - http:
         path: /s3/bucket/crear-carpeta
